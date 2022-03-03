@@ -6,7 +6,7 @@ const {Query} = require('./resolvers/Query');
 const {Product} = require('./resolvers/Product');
 const {Category} = require('./resolvers/Category');
 
-const {products, categories} = require('./db');
+const {products, categories, reviews} = require('./db');
 
 // Instantiate a new Apollo GraphQL server using a 'Type Definition' and a 'Resolver'.
 const server = new ApolloServer({ 
@@ -20,6 +20,7 @@ const server = new ApolloServer({
         hello: () => console.log('Hello world!'),
         products,
         categories,
+        reviews
     }
 });
 
